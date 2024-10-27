@@ -222,6 +222,7 @@
   "tfc.tooltip.forging": "§f - İşlenebilir",
   "tfc.tooltip.welding": "§f - Leğimlenebilir",
   "tfc.tooltip.danger": "§f - Tehlike!!",
+  "tfc.tooltip.author": "Demirci %s",
   "tfc.tooltip.anvil_plan": "Planlar",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",

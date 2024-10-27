@@ -222,6 +222,7 @@
   "tfc.tooltip.forging": "§f - 鍛造可能",
   "tfc.tooltip.welding": "§f - 溶接可能",
   "tfc.tooltip.danger": "§f - 危険！！",
+  "tfc.tooltip.author": "鍛冶屋 %s",
   "tfc.tooltip.anvil_plan": "設計",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",

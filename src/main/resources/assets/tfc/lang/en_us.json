@@ -222,6 +222,7 @@
   "tfc.tooltip.forging": "§f - Can Work",
   "tfc.tooltip.welding": "§f - Can Weld",
   "tfc.tooltip.danger": "§f - Danger!!",
+  "tfc.tooltip.author": "Blacksmith: %s",
   "tfc.tooltip.anvil_plan": "Plans",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",
