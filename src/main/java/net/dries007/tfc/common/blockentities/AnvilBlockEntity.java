@@ -281,7 +281,7 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
                     {
                         final float ratio = (float) forge.getSteps().total() / ForgeRule.calculateOptimalStepsToTarget(recipe.computeTarget(inventory), recipe.getRules());
                         final ForgingBonus bonus = ForgingBonus.byRatio(ratio);
-                        ForgingBonus.set(outputStack, bonus);
+                        ForgingBonus.set(outputStack, bonus, player);
 
                         if (bonus == ForgingBonus.PERFECTLY_FORGED)
                         {

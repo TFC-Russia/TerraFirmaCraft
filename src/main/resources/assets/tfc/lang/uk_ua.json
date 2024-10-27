@@ -230,6 +230,7 @@
   "tfc.tooltip.forging": "§f - Можна кувати",
   "tfc.tooltip.welding": "§f - Можна зварювати",
   "tfc.tooltip.danger": "§f - Перегрів!!",
+  "tfc.tooltip.author": "Коваль: %s",
   "tfc.tooltip.anvil_plan": "Креслення",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",
