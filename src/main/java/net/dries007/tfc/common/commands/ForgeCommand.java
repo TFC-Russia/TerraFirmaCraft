@@ -33,7 +33,7 @@ public final class ForgeCommand
         final ItemStack stack = player.getMainHandItem();
         if (!stack.isEmpty())
         {
-            ForgingBonus.set(stack, bonus);
+            ForgingBonus.set(stack, bonus, player);
         }
         return Command.SINGLE_SUCCESS;
     }

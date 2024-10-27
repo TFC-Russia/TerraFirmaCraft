@@ -222,6 +222,7 @@
   "tfc.tooltip.forging": "§f - Puede funcionar",
   "tfc.tooltip.welding": "§f - Puede soldar",
   "tfc.tooltip.danger": "§f - ¡¡Peligro!!",
+  "tfc.tooltip.author": "Herrero: %s",
   "tfc.tooltip.anvil_plan": "Planes",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",

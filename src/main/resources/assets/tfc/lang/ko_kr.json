@@ -223,6 +223,7 @@
   "tfc.tooltip.forging": "§f - 단조 가능",
   "tfc.tooltip.welding": "§f - 용접 가능",
   "tfc.tooltip.danger": "§f - 위험!!",
+  "tfc.tooltip.author": "대장장이 %s",
   "tfc.tooltip.anvil_plan": "계획",
   "tfc.tooltip.anvil_tier_required": "%s 모루가 필요합니다.",
   "tfc.tooltip.calendar_days_years": "%2$04d년 %1$d일",

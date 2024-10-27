@@ -8,6 +8,7 @@ package net.dries007.tfc.common.capabilities.forge;
 
 import java.util.List;
 import java.util.function.DoubleSupplier;
+import java.util.Optional;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
@@ -16,6 +17,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 
 import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
@@ -29,6 +31,7 @@ public enum ForgingBonus
     PERFECTLY_FORGED(TFCConfig.SERVER.anvilPerfectlyForgedThreshold::get);
 
     private static final String KEY = "tfc:forging_bonus";
+    private static final String KEY_AUTHOR = "tfc:forging_author";
     private static final ForgingBonus[] VALUES = values();
 
     public static ForgingBonus valueOf(int i)
@@ -54,6 +57,12 @@ public enum ForgingBonus
         if (bonus != NONE)
         {
             tooltips.add(Helpers.translateEnum(bonus).withStyle(ChatFormatting.GREEN));
+        }
+
+        final Optional<String> author = getAuthor(stack);
+        if (author.isPresent() && !author.get().isEmpty())
+        {
+            tooltips.add(Component.translatable("tfc.tooltip.author", author.get()).withStyle(ChatFormatting.GRAY));
         }
     }
 
@@ -89,6 +98,16 @@ public enum ForgingBonus
         return NONE;
     }
 
+    public static Optional<String> getAuthor(ItemStack stack)
+    {
+        final CompoundTag tag = stack.getTag();
+        if (tag != null && tag.contains(KEY_AUTHOR, Tag.TAG_STRING))
+        {
+            return Optional.of(tag.getString(KEY_AUTHOR));
+        }
+        return Optional.empty();
+    }
+
     /**
      * Set the forging bonus on an item stack
      */
@@ -97,6 +116,25 @@ public enum ForgingBonus
         if (bonus != NONE)
         {
             stack.getOrCreateTag().putInt(KEY, bonus.ordinal());
+        }
+        else
+        {
+            stack.removeTagKey(KEY);
+        }
+    }
+
+    /**
+     * Set the forging bonus and author on an item stack
+     */
+    public static void set(ItemStack stack, ForgingBonus bonus, Player player)
+    {
+        if (bonus != NONE)
+        {
+            stack.getOrCreateTag().putInt(KEY, bonus.ordinal());
+
+            if (player != null) {
+                stack.getOrCreateTag().putString(KEY_AUTHOR, player.getName().getString());
+            }
         }
         else
         {
