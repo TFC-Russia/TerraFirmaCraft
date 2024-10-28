@@ -18,6 +18,7 @@ import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.capabilities.forge.ForgingBonus;
+import net.dries007.tfc.common.component.forge.ForgingBonusComponent;
 import net.dries007.tfc.common.recipes.inventory.EmptyInventory;
 import net.dries007.tfc.common.recipes.outputs.ItemStackProvider;
 import net.dries007.tfc.util.JsonHelpers;
@@ -28,7 +29,7 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
     private final Ingredient firstInput, secondInput;
     private final int tier;
     private final ItemStackProvider output;
-    private final boolean combineForgingBonus;
+    private final Behavior bonus;
 
     public WeldingRecipe(ResourceLocation id, Ingredient firstInput, Ingredient secondInput, int tier, ItemStackProvider output, boolean combineForgingBonus)
     {
@@ -37,7 +38,7 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
         this.secondInput = secondInput;
         this.tier = tier;
         this.output = output;
-        this.combineForgingBonus = combineForgingBonus;
+        this.bonus = bonus;
     }
 
     /**
@@ -67,19 +68,22 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
     @Override
     public ItemStack assemble(Inventory inventory, RegistryAccess registryAccess)
     {
-        final ItemStack stack = output.getSingleStack(inventory.getLeft());
-        if (combineForgingBonus)
+        final ItemStack stack = output.getSingleStack(input.getLeft());
+        if (bonus != Behavior.IGNORE)
         {
-            final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
-            final ForgingBonus right = ForgingBonus.get(inventory.getRight());
-            if (left.ordinal() < right.ordinal())
-            {
-                ForgingBonus.set(stack, left);
-            }
-            else
-            {
-                ForgingBonus.set(stack, right);
-            }
+            // Compare the two bonuses and copy the actual component that we want
+            // This preserves the author of the actual bonus - not the author of the welding
+            // If both bonuses are identical, we arbitrarily pick one author (including potentially no author)
+            //
+            // This makes the most sense imo, other options are use the welding author, or drop the author entirely
+            // This is a flavor addition, it's fine.
+            final ForgingBonus left = ForgingBonusComponent.get(input.getLeft());
+            final ForgingBonus right = ForgingBonusComponent.get(input.getRight());
+
+            final boolean leftIsHigher = left.ordinal() > right.ordinal();
+            final boolean copyHigher = bonus == Behavior.COPY_BEST;
+
+            ForgingBonusComponent.copy(leftIsHigher == copyHigher ? input.getLeft() : input.getRight(), stack);
         }
         return stack;
     }

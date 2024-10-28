@@ -33,13 +33,14 @@ import net.dries007.tfc.client.particle.TFCParticles;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.devices.Tiered;
 import net.dries007.tfc.common.capabilities.InventoryItemHandler;
-import net.dries007.tfc.common.capabilities.forge.ForgeRule;
-import net.dries007.tfc.common.capabilities.forge.ForgeStep;
-import net.dries007.tfc.common.capabilities.forge.Forging;
-import net.dries007.tfc.common.capabilities.forge.ForgingBonus;
-import net.dries007.tfc.common.capabilities.forge.ForgingCapability;
-import net.dries007.tfc.common.capabilities.heat.HeatCapability;
-import net.dries007.tfc.common.capabilities.heat.IHeat;
+import net.dries007.tfc.common.component.forge.ForgeRule;
+import net.dries007.tfc.common.component.forge.ForgeStep;
+import net.dries007.tfc.common.component.forge.Forging;
+import net.dries007.tfc.common.component.forge.ForgingBonus;
+import net.dries007.tfc.common.component.forge.ForgingBonusComponent;
+import net.dries007.tfc.common.component.forge.ForgingCapability;
+import net.dries007.tfc.common.component.heat.HeatCapability;
+import net.dries007.tfc.common.component.heat.IHeat;
 import net.dries007.tfc.common.container.AnvilContainer;
 import net.dries007.tfc.common.container.AnvilPlanContainer;
 import net.dries007.tfc.common.container.ISlotCallback;
@@ -276,18 +277,19 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
                         outputHeat.setTemperatureIfWarmer(heat);
                     }
 
-                    // And apply the forging bonus, if the recipe says to do so
-                    if (recipe.shouldApplyForgingBonus())
-                    {
-                        final float ratio = (float) forge.getSteps().total() / ForgeRule.calculateOptimalStepsToTarget(recipe.computeTarget(inventory), recipe.getRules());
-                        final ForgingBonus bonus = ForgingBonus.byRatio(ratio);
-                        ForgingBonus.set(outputStack, bonus);
+                // And apply the forging bonus, if the recipe says to do so
+                if (recipe.shouldApplyForgingBonus())
+                {
+                    final float ratio = (float) forge.totalWorked() / ForgeRule.calculateOptimalStepsToTarget(recipe.computeTarget(inventory), recipe.getRules());
+                    final ForgingBonus bonus = ForgingBonus.byRatio(ratio);
+                    ForgingBonus.set(outputStack, bonus);
 
-                        if (bonus == ForgingBonus.PERFECTLY_FORGED)
-                        {
-                            TFCAdvancements.PERFECTLY_FORGED.trigger(player);
-                        }
+                    ForgingBonusComponent.set(outputStack, bonus, player);
+                    if (bonus == ForgingBonus.PERFECT)
+                    {
+                        TFCAdvancements.PERFECTLY_FORGED.trigger(player);
                     }
+                }
 
                     inventory.setStackInSlot(SLOT_INPUT_MAIN, outputStack);
                 }

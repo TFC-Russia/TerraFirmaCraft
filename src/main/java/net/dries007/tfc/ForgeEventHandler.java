@@ -173,6 +173,8 @@ import net.dries007.tfc.common.capabilities.player.PlayerData;
 import net.dries007.tfc.common.capabilities.player.PlayerDataCapability;
 import net.dries007.tfc.common.capabilities.size.ItemSizeManager;
 import net.dries007.tfc.common.commands.TFCCommands;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.forge.ForgingBonusComponent;
 import net.dries007.tfc.common.container.BlockEntityContainer;
 import net.dries007.tfc.common.container.Container;
 import net.dries007.tfc.common.container.PestContainer;
@@ -502,7 +504,7 @@ public final class ForgeEventHandler
     public static void onBreakSpeed(PlayerEvent.BreakSpeed event)
     {
         // Apply mining speed modifiers from forging bonuses
-        final ForgingBonus bonus = ForgingBonus.get(event.getEntity().getMainHandItem());
+        final ForgingBonus bonus = ForgingBonusComponent.get(event.getEntity().getMainHandItem());
         if (bonus != ForgingBonus.NONE)
         {
             event.setNewSpeed(event.getNewSpeed() * bonus.efficiency());
@@ -942,12 +944,7 @@ public final class ForgeEventHandler
         final Entity attackerEntity = event.getSource().getEntity();
         if (attackerEntity instanceof LivingEntity livingEntity)
         {
-            amount *= ForgingBonus.get(livingEntity.getMainHandItem()).damage();
-
-            if (event.getEntity() instanceof Player player)
-            {
-                Helpers.maybeDisableShield(livingEntity.getMainHandItem(), player.isUsingItem() ? player.getUseItem() : ItemStack.EMPTY, player, livingEntity);
-            }
+            amount *= ForgingBonusComponent.get(livingEntity.getMainHandItem()).damage();
         }
 
         // Physical damage type

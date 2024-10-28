@@ -1,6 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:welding",
+  "bonus": "copy_worst",
   "first_input": {
     "item": "tfc:metal/knife_blade/red_steel"
   },

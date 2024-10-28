@@ -6,13 +6,23 @@
 
 package net.dries007.tfc.util;
 
-import java.util.List;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import java.util.List;
+
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.Nullable;
+
+import net.dries007.tfc.config.TFCConfig;
+
+/**
+ * Text based tooltips for common situations, such as displaying standardized quantities of a fluid.
+ */
 public final class Tooltips
 {
     public static MutableComponent fluidUnits(double mB)
@@ -51,11 +61,47 @@ public final class Tooltips
         return Component.translatable(key);
     }
 
+    @Nullable
+    public static MutableComponent meltsInto(FluidStack stack, float atTemperature)
+    {
+        final MutableComponent heat = TFCConfig.CLIENT.heatTooltipStyle.get().formatColored(atTemperature);
+        return heat == null ? null : Component.translatable("tfc.tooltip.melts_into", fluidUnitsOf(stack), heat);
+    }
+
+    public static MutableComponent contents()
+    {
+        return Component.translatable("tfc.tooltip.contents").withStyle(ChatFormatting.DARK_GREEN);
+    }
+
     public static MutableComponent countOfItem(ItemStack stack)
     {
-        return Component.literal(String.valueOf(stack.getCount()))
+        return countOfItem(stack, stack.getCount());
+    }
+
+    public static MutableComponent countOfItem(ItemStack stack, int count)
+    {
+        return Component.literal(String.valueOf(count))
             .append(" x ")
             .append(stack.getHoverName());
+    }
+
+    public static MutableComponent tier(int tier)
+    {
+        return Component.translatable("tfc.tooltip.tier_" + tier);
+    }
+
+    @Contract("null, null -> fail")
+    public static MutableComponent require(@Nullable Component min, @Nullable Component max)
+    {
+        if (min != null && max != null) return Component.translatable("tfc.tooltip.required_range", min, max);
+        if (min != null) return Component.translatable("tfc.tooltip.required_greater_than", min);
+        if (max != null) return Component.translatable("tfc.tooltip.required_less_than", max);
+        throw new IllegalArgumentException("One of min or max must be non-null");
+    }
+
+    public static MutableComponent author(Component source, String author)
+    {
+        return Component.translatable("tfc.tooltip.author", source, author);
     }
 
     public record DeviceImageTooltip(List<ItemStack> items, int width, int height) implements TooltipComponent {}

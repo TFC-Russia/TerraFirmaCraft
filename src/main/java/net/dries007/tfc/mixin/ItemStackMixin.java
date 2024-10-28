@@ -14,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 
 import net.dries007.tfc.client.BarSystem;
 import net.dries007.tfc.common.capabilities.forge.ForgingBonus;
+import net.dries007.tfc.common.component.forge.ForgingBonusComponent;
 import net.dries007.tfc.common.capabilities.heat.Heat;
 import net.dries007.tfc.common.capabilities.heat.HeatCapability;
 import net.dries007.tfc.common.capabilities.heat.HeatDefinition;
@@ -32,7 +33,7 @@ public abstract class ItemStackMixin
     @Inject(method = "hurt", at = @At("HEAD"), cancellable = true)
     private void applyForgingBonusToPreventItemDamage(int amount, RandomSource random, ServerPlayer player, CallbackInfoReturnable<Boolean> cir)
     {
-        if (ForgingBonus.applyLikeUnbreaking((ItemStack) (Object) this, random))
+        if (ForgingBonusComponent.applyLikeUnbreaking((ItemStack) (Object) this, random))
         {
             cir.setReturnValue(false);
         }
