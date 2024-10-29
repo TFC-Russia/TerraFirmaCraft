@@ -113,14 +113,7 @@ public enum ForgingBonus
      */
     public static void set(ItemStack stack, ForgingBonus bonus)
     {
-        if (bonus != NONE)
-        {
-            stack.getOrCreateTag().putInt(KEY, bonus.ordinal());
-        }
-        else
-        {
-            stack.removeTagKey(KEY);
-        }
+        set(stack, bonus, null);
     }
 
     /**
