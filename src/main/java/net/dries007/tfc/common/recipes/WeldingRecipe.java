@@ -75,7 +75,19 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
     public ItemStack assemble(Inventory inventory, RegistryAccess registryAccess)
     {
         final ItemStack stack = output.getSingleStack(inventory.getLeft());
-        // both recipe variants are valid since it is migration friendly
+        // any recipe variant is valid since it is migration friendly
+        // but the "bonus" behavior is prioritized over the "combine bonus" boolean
+        if (bonus != Behavior.IGNORE)
+        {
+            final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
+            final ForgingBonus right = ForgingBonus.get(inventory.getRight());
+
+            final boolean leftIsHigher = left.ordinal() > right.ordinal();
+            final boolean copyHigher = bonus == Behavior.COPY_BEST;
+
+            ForgingBonus.copy(leftIsHigher == copyHigher ? inventory.getLeft() : inventory.getRight(), stack);
+        }
+        else
         if (combineForgingBonus)
         {
             final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
@@ -89,15 +101,6 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
             {
                 ForgingBonus.set(stack, right);
             }
-        } else if (bonus != Behavior.IGNORE)
-        {
-            final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
-            final ForgingBonus right = ForgingBonus.get(inventory.getRight());
-
-            final boolean leftIsHigher = left.ordinal() > right.ordinal();
-            final boolean copyHigher = bonus == Behavior.COPY_BEST;
-
-            ForgingBonus.copy(leftIsHigher == copyHigher ? inventory.getLeft() : inventory.getRight(), stack);
         }
         return stack;
     }
