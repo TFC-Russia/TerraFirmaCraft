@@ -17,8 +17,7 @@ public enum CopyForgingBonusModifier implements ItemStackModifier.SingleInstance
     @Override
     public ItemStack apply(ItemStack stack, ItemStack input)
     {
-        ForgingBonus.set(stack, ForgingBonus.get(input));
-        return stack;
+        return ForgingBonus.copy(input, stack);
     }
 
     @Override
