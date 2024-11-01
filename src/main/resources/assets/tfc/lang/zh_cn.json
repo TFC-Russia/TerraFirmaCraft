@@ -231,7 +231,7 @@
   "tfc.tooltip.forging": "§f - 可加工",
   "tfc.tooltip.welding": "§f - 可焊接",
   "tfc.tooltip.danger": "§f - 危险！！",
-  "tfc.tooltip.author": "镣铐 %s",
+  "tfc.tooltip.author": "§a%s§7 by %s",
   "tfc.tooltip.anvil_plan": "目标",
   "tfc.tooltip.anvil_tier_required": "需要%s铁砧",
   "tfc.tooltip.calendar_days_years": "%d日，%04d年",

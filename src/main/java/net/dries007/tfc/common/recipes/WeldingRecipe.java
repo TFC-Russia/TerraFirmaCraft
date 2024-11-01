@@ -6,10 +6,14 @@
 
 package net.dries007.tfc.common.recipes;
 
+import java.util.Locale;
+
 import com.google.gson.JsonObject;
+
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -28,9 +32,11 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
     private final Ingredient firstInput, secondInput;
     private final int tier;
     private final ItemStackProvider output;
+    private final Behavior bonus;
+    /** @deprecated Use Behavior {@link #bonus} instead. Migration friendly */
     private final boolean combineForgingBonus;
 
-    public WeldingRecipe(ResourceLocation id, Ingredient firstInput, Ingredient secondInput, int tier, ItemStackProvider output, boolean combineForgingBonus)
+    public WeldingRecipe(ResourceLocation id, Ingredient firstInput, Ingredient secondInput, int tier, ItemStackProvider output, boolean combineForgingBonus, Behavior bonus)
     {
         this.id = id;
         this.firstInput = firstInput;
@@ -38,6 +44,7 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
         this.tier = tier;
         this.output = output;
         this.combineForgingBonus = combineForgingBonus;
+        this.bonus = bonus;
     }
 
     /**
@@ -68,10 +75,12 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
     public ItemStack assemble(Inventory inventory, RegistryAccess registryAccess)
     {
         final ItemStack stack = output.getSingleStack(inventory.getLeft());
+        // both recipe variants are valid since it is migration friendly
         if (combineForgingBonus)
         {
             final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
             final ForgingBonus right = ForgingBonus.get(inventory.getRight());
+
             if (left.ordinal() < right.ordinal())
             {
                 ForgingBonus.set(stack, left);
@@ -80,6 +89,15 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
             {
                 ForgingBonus.set(stack, right);
             }
+        } else if (bonus != Behavior.IGNORE)
+        {
+            final ForgingBonus left = ForgingBonus.get(inventory.getLeft());
+            final ForgingBonus right = ForgingBonus.get(inventory.getRight());
+
+            final boolean leftIsHigher = left.ordinal() > right.ordinal();
+            final boolean copyHigher = bonus == Behavior.COPY_BEST;
+
+            ForgingBonus.copy(leftIsHigher == copyHigher ? inventory.getLeft() : inventory.getRight(), stack);
         }
         return stack;
     }
@@ -142,7 +160,8 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
             final int tier = JsonHelpers.getAsInt(json, "tier", -1);
             final ItemStackProvider output = ItemStackProvider.fromJson(JsonHelpers.getAsJsonObject(json, "result"));
             final boolean combineForging = JsonHelpers.getAsBoolean(json, "combine_forging_bonus", false);
-            return new WeldingRecipe(recipeId, firstInput, secondInput, tier, output, combineForging);
+            final Behavior bonus = Behavior.from(JsonHelpers.getAsString(json, "bonus", "ignore"));
+            return new WeldingRecipe(recipeId, firstInput, secondInput, tier, output, combineForging, bonus);
         }
 
         @Nullable
@@ -154,7 +173,8 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
             final int tier = buffer.readVarInt();
             final ItemStackProvider output = ItemStackProvider.fromNetwork(buffer);
             final boolean combineForging = buffer.readBoolean();
-            return new WeldingRecipe(recipeId, firstInput, secondInput, tier, output, combineForging);
+            final Behavior bonus = Behavior.from(buffer.readUtf());
+            return new WeldingRecipe(recipeId, firstInput, secondInput, tier, output, combineForging, bonus);
         }
 
         @Override
@@ -165,6 +185,28 @@ public class WeldingRecipe implements ISimpleRecipe<WeldingRecipe.Inventory>
             buffer.writeVarInt(recipe.tier);
             recipe.output.toNetwork(buffer);
             buffer.writeBoolean(recipe.combineForgingBonus);
+            buffer.writeUtf(recipe.bonus.getSerializedName());
+        }
+    }
+
+    public enum Behavior implements StringRepresentable
+    {
+        COPY_BEST, // Copy the best of both inputs. If one input has no bonus, the other will be copied
+        COPY_WORST, // Copy the worst of both inputs. If one input has no bonus, no bonus will be present
+        IGNORE; // No bonus will be present on the output item
+
+        public static Behavior from(String name) {
+            try {
+                return valueOf(name.toUpperCase(Locale.ROOT));
+            } catch (Exception e) {
+                return IGNORE;
+            }
+        }
+
+        @Override
+        public String getSerializedName()
+        {
+            return name().toLowerCase(Locale.ROOT);
         }
     }
 }
