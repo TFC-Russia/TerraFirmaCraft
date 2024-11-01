@@ -58,5 +58,10 @@ public final class Tooltips
             .append(stack.getHoverName());
     }
 
+    public static MutableComponent author(Component source, String author)
+    {
+        return Component.translatable("tfc.tooltip.author", source, author);
+    }
+
     public record DeviceImageTooltip(List<ItemStack> items, int width, int height) implements TooltipComponent {}
 }

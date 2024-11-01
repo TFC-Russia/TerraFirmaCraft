@@ -227,7 +227,7 @@
   "tfc.tooltip.forging": "§f - Можно ковать",
   "tfc.tooltip.welding": "§f - Можно сварить",
   "tfc.tooltip.danger": "§f - Перегрев, опасно!!",
-  "tfc.tooltip.author": "Кузнец: %s",
+  "tfc.tooltip.author": "§a%s§7 by %s",
   "tfc.tooltip.anvil_plan": "Чертежи",
   "tfc.tooltip.anvil_tier_required": "Необходима наковальня, имеющая %s",
   "tfc.tooltip.calendar_days_years": "%d, %04d",

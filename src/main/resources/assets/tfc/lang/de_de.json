@@ -223,7 +223,7 @@
   "tfc.tooltip.forging": "§f - Kann bearbeiten",
   "tfc.tooltip.welding": "§f - Kann schweißen",
   "tfc.tooltip.danger": "§f - Achtung!!",
-  "tfc.tooltip.author": "Schmied: %s",
+  "tfc.tooltip.author": "§a%s§7 by %s",
   "tfc.tooltip.anvil_plan": "Pläne",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d, %04d",
