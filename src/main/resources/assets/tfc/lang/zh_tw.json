@@ -229,7 +229,7 @@
   "tfc.tooltip.forging": "§f - 可加工",
   "tfc.tooltip.welding": "§f - 可焊接",
   "tfc.tooltip.danger": "§f - 危險！！",
-  "tfc.tooltip.author": "§a%s§7 by %s",
+  "tfc.tooltip.author": "§7Blacksmith: §f%s",
   "tfc.tooltip.anvil_plan": "目標",
   "tfc.tooltip.anvil_tier_required": "Requires %s Anvil",
   "tfc.tooltip.calendar_days_years": "%d日，%04d年",
