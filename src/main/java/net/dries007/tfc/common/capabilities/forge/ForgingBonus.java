@@ -67,9 +67,11 @@ public enum ForgingBonus implements StringRepresentable
         if (bonus != ForgingBonus.NONE)
         {
             final MutableComponent name = bonus.getDisplayName();
-            tooltips.add(ForgingBonus.getAuthor(stack)
-                .map(author -> Tooltips.author(name, author))
-                .orElse(name));
+
+            if (ForgingBonus.getAuthor(stack).isPresent()) {
+                tooltips.add(Tooltips.author(ForgingBonus.getAuthor(stack).get()));
+            }
+
             tooltips.add(Helpers.translateEnum(bonus).withStyle(ChatFormatting.GREEN));
         }
     }
