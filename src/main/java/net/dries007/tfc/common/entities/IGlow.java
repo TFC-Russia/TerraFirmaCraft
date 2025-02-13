@@ -98,7 +98,7 @@ public interface IGlow
     {
         final Entity entity = getEntity();
         final Level level = entity.level();
-        if (!level.isLoaded(entity.blockPosition()))
+        if (!level.isLoaded(getLightPos()))
         {
             return;
         }

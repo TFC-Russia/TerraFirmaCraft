@@ -953,6 +953,7 @@ def generate(rm: ResourceManager):
         glass_recipe(rm, 'cyan_' + name + '2', ['sapphire', 'copper', op], '#tfc:glass_batches_tier_3', result % 'cyan')
         glass_recipe(rm, 'brown_' + name, ['nickel', op], '#tfc:glass_batches', result % 'brown')
         glass_recipe(rm, 'purple_' + name, ['iron', 'copper', op], '#tfc:glass_batches', result % 'purple')
+        glass_recipe(rm, 'purple_' + name + '2', ['copper', 'iron', op], '#tfc:glass_batches', result % 'purple')
         glass_recipe(rm, 'gray_' + name, ['graphite', 'soda_ash', op], '#tfc:glass_batches', result % 'gray')
         glass_recipe(rm, 'gray_' + name + '2', ['soda_ash', 'graphite', op], '#tfc:glass_batches', result % 'gray')
         glass_recipe(rm, 'light_gray_' + name, ['graphite', 'soda_ash', 'soda_ash', op], '#tfc:glass_batches', result % 'light_gray')

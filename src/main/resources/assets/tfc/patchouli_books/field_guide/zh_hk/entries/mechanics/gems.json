@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "相比於普通的礦石，寶石礦石有更高的$(thing)硬度$()，因此需要特定種類的鎬才能挖掘。挖掘不同種類的寶石礦石所需的$(thing)鎬$()的等級如下：$(br)$(li)紫水晶；鋼鎬$(li)鑽石：黑鋼鎬$(li)綠寶石：鋼鎬$(li)青金石：鍛鐵鎬$(li)蛋白石：鍛鐵鎬$(li)黃鐵礦：銅鎬$(li)紅寶石：黑鋼鎬$(li)藍寶石：黑鋼鎬$(li)黃玉：鋼鎬"
+      "text": "Gems have higher $(thing)Hardness$() values than regular ore, requiring different strength tools to break them. This summarizes the minimum $(thing)Pickaxe$() tier required to break a gem ore block:$(br)$(li)Amethyst: Steel$(li)Diamond: Black Steel$(li)Emerald: Steel$(li)Lapis Lazuli: Bronze$(li)Opal: Bronze$(li)Pyrite: Copper$(li)Ruby: Black Steel$(li)Sapphire: Black Steel$(li)Topaz: Steel"
     },
     {
       "type": "patchouli:text",

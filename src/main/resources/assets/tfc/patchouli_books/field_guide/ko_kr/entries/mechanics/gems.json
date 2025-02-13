@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "보석은 일반적인 광석보다 높은 $(thing)강도$()를 가지며, 캐기 위해서는 더 강력한 도구가 필요합니다. 특정한 보석 광석을 캐기 위한 최소 $(thing)곡괭이$() 티어는 다음과 같습니다.$(br)$(li)자수정: 강철$(li)다이아몬드: 흑강$(li)에메랄드: 강철$(li)청금석: 연철$(li)오팔: 연철$(li)황철석: 구리$(li)루비: 흑강$(li)사파이어: 흑강$(li)토파즈: 강철"
+      "text": "Gems have higher $(thing)Hardness$() values than regular ore, requiring different strength tools to break them. This summarizes the minimum $(thing)Pickaxe$() tier required to break a gem ore block:$(br)$(li)Amethyst: Steel$(li)Diamond: Black Steel$(li)Emerald: Steel$(li)Lapis Lazuli: Bronze$(li)Opal: Bronze$(li)Pyrite: Copper$(li)Ruby: Black Steel$(li)Sapphire: Black Steel$(li)Topaz: Steel"
     },
     {
       "type": "patchouli:text",

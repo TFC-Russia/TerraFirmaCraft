@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Драгоценные камни имеют более высокие значения $(thing)Твёрдости$(), чем обычная руда, требуя инструменты разной прочности для их добычи. Это подводит итог минимальному уровню $(thing)Кирки$(), необходимому для добычи блока руды драгоценного камня: $(br)$(li)Аметист: Сталь$(li)Алмаз: Чёрная сталь$(li)Изумруд: Сталь$(li)Лазурит: Кованое железо$(li)Опал: Кованое железо$(li)Пирит: Медь$(li)Рубин: Чёрная сталь$(li)Сапфир: Чёрная сталь$(li)Топаз: Сталь"
+      "text": "Gems have higher $(thing)Hardness$() values than regular ore, requiring different strength tools to break them. This summarizes the minimum $(thing)Pickaxe$() tier required to break a gem ore block:$(br)$(li)Amethyst: Steel$(li)Diamond: Black Steel$(li)Emerald: Steel$(li)Lapis Lazuli: Bronze$(li)Opal: Bronze$(li)Pyrite: Copper$(li)Ruby: Black Steel$(li)Sapphire: Black Steel$(li)Topaz: Steel"
     },
     {
       "type": "patchouli:text",

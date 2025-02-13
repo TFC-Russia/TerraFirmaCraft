@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "相比于普通的矿石，宝石矿石有更高的$(thing)硬度$()，因此需要特定种类的镐才能挖掘。挖掘不同种类的宝石矿石所需的$(thing)镐$()的等级如下：$(br)$(li)紫水晶；钢镐$(li)钻石：黑钢镐$(li)绿宝石：钢镐$(li)青金石：锻铁镐$(li)蛋白石：锻铁镐$(li)黄铁矿：铜镐$(li)红宝石：黑钢镐$(li)蓝宝石：黑钢镐$(li)黄玉：钢镐"
+      "text": "Gems have higher $(thing)Hardness$() values than regular ore, requiring different strength tools to break them. This summarizes the minimum $(thing)Pickaxe$() tier required to break a gem ore block:$(br)$(li)Amethyst: Steel$(li)Diamond: Black Steel$(li)Emerald: Steel$(li)Lapis Lazuli: Bronze$(li)Opal: Bronze$(li)Pyrite: Copper$(li)Ruby: Black Steel$(li)Sapphire: Black Steel$(li)Topaz: Steel"
     },
     {
       "type": "patchouli:text",

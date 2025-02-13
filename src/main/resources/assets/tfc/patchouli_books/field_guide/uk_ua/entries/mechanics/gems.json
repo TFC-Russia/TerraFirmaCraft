@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "Дорогоцінні камені мають вищі значення $(thing)твердості$(), ніж звичайні руди, тому для їх видобування потрібні інструменти вищої міцності. Цей перелік вкаже необхідний рівень $(thing)кайла$(), для видобутку:$(br)$(li)Аметист: сталь$(li)Діамант: чорна сталь$(li)Смарагд: сталь$(li)Лазурит: ковке залізо$(li)Опал: ковке залізо$(li)Пірит: мідь$(li)Рубін: чорна сталь$(li)Сапфір: чорна сталь$(li)Топаз: сталь"
+      "text": "Gems have higher $(thing)Hardness$() values than regular ore, requiring different strength tools to break them. This summarizes the minimum $(thing)Pickaxe$() tier required to break a gem ore block:$(br)$(li)Amethyst: Steel$(li)Diamond: Black Steel$(li)Emerald: Steel$(li)Lapis Lazuli: Bronze$(li)Opal: Bronze$(li)Pyrite: Copper$(li)Ruby: Black Steel$(li)Sapphire: Black Steel$(li)Topaz: Steel"
     },
     {
       "type": "patchouli:text",
