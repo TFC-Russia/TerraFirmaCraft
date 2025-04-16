@@ -1,34 +1,34 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "name": "高度な素材",
+  "name": "高度な建材",
   "category": "tfc:mechanics",
   "icon": "tfc:brick/rhyolite",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "石器時代の原始的な $(l:getting_started/building_materials)建築資材$() に加えて、金属工具を入手すると、より高度な建築資材を構築できるようになります"
+      "text": "石器時代の原始的な$(l:getting_started/building_materials)建材$()に加えて、金属工具を入手すると、より高度な建材を作成できます。"
     },
     {
       "type": "patchouli:text",
-      "text": "$(br) 1. $(l:mechanics/advanced_building_materials#alabaster)アラバスター$()$(br) 2. $(l:mechanics/advanced_building_materials#bricks_and_mortar)レンガとモルタル$()$(br)",
+      "text": "$(br) 1. $(l:mechanics/advanced_building_materials#alabaster)雪花石膏$()$(br) 2. $(l:mechanics/advanced_building_materials#bricks_and_mortar)レンガとモルタル$()$(br)",
       "title": "もくじ"
     },
     {
       "type": "patchouli:text",
       "anchor": "alabaster",
-      "text": "アラバスターは $(l:the_world/ores_and_minerals#gypsum)石膏$() から作られた建築ブロックです。 アラバスターは $(l:the_world/ores_and_minerals#gypsum)石膏$() を使って直接クラフトすることで作成できますが、一部の $(l:the_world/ores_and_minerals#gypsum)石膏$() を 100 mB で封印するとより効率的に作成できます。 樽の中に $(thing)石灰水$()を入れて石膏を密封します。",
-      "title": "アラバスター"
+      "text": "雪花石膏は$(l:the_world/ores_and_minerals#gypsum)石膏$()から作られる建築ブロックです。雪花石膏は$(l:the_world/ores_and_minerals#gypsum)石膏$()を直接クラフトすることで作成できます。また、$(l:the_world/ores_and_minerals#gypsum)石膏$()を$(thing)石灰水$()100mBとともに樽に入れ密封するとより効率よく作成できます。",
+      "title": "雪花石膏"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "tfc:crafting/alabaster_brick",
       "recipe2": "tfc:crafting/alabaster_bricks",
-      "title": "アラバスターレンガ"
+      "title": "雪花石膏のレンガ"
     },
     {
       "type": "patchouli:text",
-      "text": "Alabaster can be $(l:mechanics/dye)dyed$() in a $(l:mechanics/barrels)Barrel$() of dye into any color. Raw Alabaster blocks can also be $(l:mechanics/chisel)chiseled$() into $(thing)Polished Alabaster$() using the $(thing)Smooth$() chisel mode, or crafted into stairs, slabs, or walls.",
-      "title": "アラバスター装飾"
+      "text": "雪花石膏は、$(l:mechanics/dye)染料$()$(l:mechanics/barrels)樽$()の中で任意の色に染めることができます。生の雪花石膏は、$(thing)滑らかにする$()ノミのモードを使用して$(l:mechanics/chisel)加工$()することで$(thing)磨かれた雪花石膏$()にすることもできますし、階段、ハーフブロック、または壁にクラフトもできます。",
+      "title": "雪花石膏の装飾"
     },
     {
       "type": "patchouli:crafting",
@@ -39,7 +39,7 @@
     {
       "type": "patchouli:text",
       "anchor": "bricks_and_mortar",
-      "text": "$(thing)石レンガ$() は、$(l:mechanics/chisel)ノミ$() とばらばらの石を使用して作成できます。 次に、補強のため $(thing)モルタル$() が必要です。$(br2)モルタルは、$(thing)石灰水$()を入れた$(l:mechanics/barrels#) 樽$()に $(thing)砂$() を追加することで作成できます。",
+      "text": "$(thing)石レンガ$()は、$(l:mechanics/chisel)ノミ$()とばらばらの石レンガ、補強のための$(thing)モルタル$()が必要です。$(br2)モルタルは、$(thing)石灰水$()を入れた$(l:mechanics/barrels#)樽$()に$(thing)砂$()を追加することで作成できます。",
       "title": "レンガとモルタル"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)ひびの入った石レンガ$() や $(thing)彫刻された石$() など、他の装飾用石ブロックも作成できます。 $(thing)苔むした$() 石ブロックは、水中の既存の苔むしたレンガや丸石の近くに丸石やレンガを置くことによっても作成できます。 コケはこれらの近くのブロックに広がり始めます。"
+      "text": "$(thing)ひびの入った石レンガ$()や$(thing)模様入りの石$()など、他の装飾用石ブロックも作成できます。$(thing)苔むした$()石ブロックは、水中の既存の苔むしたレンガや苔むした丸石の近くに丸石やレンガを置くことによって作成できます。苔はこれらの近くのブロックに広がり始めます。"
     },
     {
       "type": "patchouli:crafting",

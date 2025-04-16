@@ -6,11 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "作物は食料やその他の材料の供給源です。 それぞれの作物はわずかに異なりますが、すべての作物にはいくつかの類似した特徴があります。 作物の栽培を始めるには、$(thing)種$() が必要になります。$(l:the_world/wild_crops)自生作物$() を見つけて壊すことで入手できます。 種を持っている場合は、$(thing)クワ$() も必要になります。 種子は $(l:mechanics/fishing)餌$() としても役立ちます。"
+      "text": "作物は食品やその他の材料の供給源です。それぞれの作物は若干の違いはありますが、すべての作物には共通するいくつかの特徴があります。作物を栽培するには、$(thing)種$()が必要です。これは、$(l:the_world/wild_crops)野生の作物$()を壊して入手できます。種を手に入れたら、$(thing)クワ$()も必要です。$(br2)また、種は$(l:mechanics/fishing)釣りエサ$()としても役に立ちます。"
     },
     {
       "type": "patchouli:text",
-      "text": "自生作物を見つけるだけでなく、すでに育てている作物から種子を入手することもできます。 完全に成熟した作物が天候によって、または放置しておくと枯れ、種子となり、次の時期にさらに多くの作物を育てるために使用できる多くの種子を落とします。"
+      "text": "野生の作物だけでなく、すでに育てている作物からも種を入手できます。完全に成熟した作物が天候によって、または放置することで枯れ、種となり、次の時期に作物を育てるために使用できる多くの種を落とします。"
     },
     {
       "type": "tfc:rock_knapping_recipe",
@@ -20,26 +20,26 @@
         "tfc:rock_knapping/hoe_head_igneous_extrusive",
         "tfc:rock_knapping/hoe_head_igneous_intrusive"
       ],
-      "text": "まず $(thing)石のクワ$() を $(thing)ナッピング$() して作成します。"
+      "text": "まず石を$(thing)加工$()して$(thing)石のクワ$()を作成します。"
     },
     {
       "type": "patchouli:crafting",
       "recipe": "tfc:crafting/stone/hoe_sedimentary",
-      "text": "鍬の頭をナッピングしたら、バニラと同様に土ブロックを右クリックして $(thing)農地$() に耕すことができます。$(br2)クワは、$(thing)根付いた土$()など を $(thing)土$() に変換するために使用することもできます。"
+      "text": "クワを作成したら、バニラと同様に土ブロックを右クリックして耕すことで$(thing)農地$()ができます。$(br2)クワは、$(thing)根付いた土$()などを$(thing)土$()に変換することも可能です。"
     },
     {
       "type": "patchouli:text",
-      "text": "すべての作物は成長するために農地に植える必要があります。 作物によっては、水に浸したり、成長するために支柱が必要になるなど、追加の要件があります。$(br2)作物は成長するために必ずしも $(thing)栄養素$() を必要としませんが、確かに栄養素の存在は作物の健やかな成長に役立ちます。 $(b)窒素$()、$(6)リン$()、$(d)カリウム$()の3つの栄養素があります。 それぞれの作物には適した栄養素があります。",
+      "text": "すべての作物は育てるために農地に植える必要があります。作物によっては、水に浸したり、成長するために支柱が必要になるなど、追加の条件があります。$(br2)作物を育てるために$(thing)栄養素$()が必須というわけではありません。しかし、栄養素は作物の健やかな成長に役立ちます。$(b)窒素$()、$(6)リン$()、$(d)カリウム$()の3つの栄養素があり、それぞれの作物には適した栄養素があります。",
       "title": "作物の成長"
     },
     {
       "type": "patchouli:text",
-      "text": "Consuming its favorite nutrient causes a crop to grow faster, and improves the yield of the crop at harvest time. That means that crops that consumed more nutrients drop more food when broken! Consuming a nutrient also has the effect of replenishing the other nutrients around it a small amount.$(br2)The next several pages list all the crops present in TFC"
+      "text": "作物が好む栄養素を摂取すると、作物の成長が速くなり、収穫量が向上します。つまり、より多くの栄養素を摂取した作物は、収穫時により多くの食料を提供します！栄養素を摂取することは、周囲の他の栄養素を少量補充する効果もあります。$(br2)次の数ページからは、TFCに存在するすべての作物について解説されています。"
     },
     {
       "type": "patchouli:text",
       "anchor": "barley",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -8 - 26 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 18 - 75 %$(br)$(bold)栄養素$(): 窒素$(br2)大麦は単一ブロック作物です。 大麦の種は農地に植えることができ、$(thing)大麦$() と $(thing)大麦の種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -8 - 26 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 18 - 75 %$(br)$(bold)栄養素$(): 窒素$(br2)大麦は1ブロック分の作物です。大麦の種は農地に植えることができ、$(thing)大麦$()と$(thing)大麦の種$()を生産します。",
       "title": "大麦"
     },
     {
@@ -187,7 +187,7 @@
     {
       "type": "patchouli:text",
       "anchor": "oat",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 3 - 40 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 35 - 100 %$(br)$(bold)栄養素$(): リン$(br2)オーツ麦は単一ブロック作物です。 オーツ麦の種は農地に植えることができ、$(thing)オーツ麦$() と $(thing)オーツ麦の種() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 3 - 40 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 35 - 100 %$(br)$(bold)栄養素$(): リン$(br2)オーツ麦は1ブロック分の作物です。オーツ麦の種は農地に植えることができ、$(thing)オーツ麦$()と$(thing)オーツ麦の種$()を生産します。",
       "title": "オーツ麦"
     },
     {
@@ -335,7 +335,7 @@
     {
       "type": "patchouli:text",
       "anchor": "rye",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -11 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 85 %$(br)$(bold)栄養素$(): リン$(br2)ライ麦は単一ブロック作物です。 ライ麦の種は農地に植えることができ、$(thing)ライ麦$() と $(thing)ライ麦の種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -11 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 85 %$(br)$(bold)栄養素$(): リン$(br2)ライ麦は1ブロック分の作物です。ライ麦の種は農地に植えることができ、$(thing)ライ麦$()と$(thing)ライ麦の種$()を生産します。",
       "title": "ライ麦"
     },
     {
@@ -483,7 +483,7 @@
     {
       "type": "patchouli:text",
       "anchor": "maize",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 13 - 40 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 75 - 100 %$(br)$(bold)栄養素$(): リン$(br2)トウモロコシは 2 ブロックの高さの作物です。 トウモロコシの種は農地に植えることができ、2 ブロックの高さに成長し、$(thing)トウモロコシ$() と $(thing)トウモロコシの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 13 - 40 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 75 - 100 %$(br)$(bold)栄養素$(): リン$(br2)トウモロコシは高さ2ブロック分の作物です。トウモロコシの種は農地に植えることができ、2ブロックの高さに成長し、$(thing)トウモロコシ$()と$(thing)トウモロコシの種$()を生産します。",
       "title": "トウモロコシ"
     },
     {
@@ -621,7 +621,7 @@
     {
       "type": "patchouli:text",
       "anchor": "wheat",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -4 - 35 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): リン$(br2)小麦は単一ブロック作物です。 小麦の種は農地に植えることができ、製品として $(thing)小麦$() と $(thing)小麦の種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -4 - 35 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): リン$(br2)小麦は1ブロック分の作物です。小麦の種は農地に植えることができ、$(thing)小麦$()と$(thing)小麦の種$()を生産します。",
       "title": "小麦"
     },
     {
@@ -769,12 +769,12 @@
     {
       "type": "patchouli:text",
       "anchor": "rice",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 15 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): リン$(br2)米は単一ブロック作物です。 米は水中で栽培します。1ブロックの深さの淡水の農地に植えられなければなりません。 $(thing)米$() と $(thing)米の種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 15 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): リン$(br2)米は1ブロック分の作物です。米は水中で栽培します。1ブロックの深さの淡水の農地に植える必要があります。$(thing)米$()と$(thing)米の種$()を生産します。",
       "title": "米"
     },
     {
       "type": "tfc:multimultiblock",
-      "text": "注: 成長するには、米ブロックが $(thing)水浸し$() でなければなりません。",
+      "text": "注: 成長するには、米の苗が$(thing)水中$()でなければなりません。",
       "multiblocks": [
         {
           "pattern": [
@@ -917,7 +917,7 @@
     {
       "type": "patchouli:text",
       "anchor": "beet",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -5 - 20 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 18 - 85 %$(br)$(bold)栄養素$(): カリウム$(br2)ビーツは単一ブロック作物です。 ビーツの種は農地に植えることができ、$(thing)ビーツ$() および $(thing)ビーツの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -5 - 20 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 18 - 85 %$(br)$(bold)栄養素$(): カリウム$(br2)ビーツは1ブロック分の作物です。ビーツの種は農地に植えることができ、$(thing)ビーツ$()と$(thing)ビーツの種$()を生産します。",
       "title": "ビーツ"
     },
     {
@@ -1031,7 +1031,7 @@
     {
       "type": "patchouli:text",
       "anchor": "cabbage",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -10 - 27 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 15 - 65 %$(br)$(bold)栄養素$(): 窒素$(br2)キャベツは単一ブロック作物です。 キャベツの種は農地に植えることができ、$(thing)キャベツ$() と $(thing)キャベツの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -10 - 27 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 15 - 65 %$(br)$(bold)栄養素$(): 窒素$(br2)キャベツは1ブロック分の作物です。キャベツの種は農地に植えることができ、$(thing)キャベツ$()と$(thing)キャベツの種$()を生産します。",
       "title": "キャベツ"
     },
     {
@@ -1145,7 +1145,7 @@
     {
       "type": "patchouli:text",
       "anchor": "carrot",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 3 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ニンジンは単一ブロック作物です。 ニンジンの種は農地に植えることができ、$(thing)ニンジン$() と $(thing)ニンジンの種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 3 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ニンジンは1ブロック分の作物です。ニンジンの種は農地に植えることができ、$(thing)ニンジン$()と$(thing)ニンジンの種$()を生産します。",
       "title": "ニンジン"
     },
     {
@@ -1242,7 +1242,7 @@
     {
       "type": "patchouli:text",
       "anchor": "garlic",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -20 - 18 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 15 - 75 %$(br)$(bold)栄養素$(): 窒素$(br2)ニンニクは単一ブロック作物です。 ニンニクの種は農地に植えることができ、$(thing)ニンニク$() と $(thing)ニンニクの種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -20 - 18 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 15 - 75 %$(br)$(bold)栄養素$(): 窒素$(br2)ニンニクは1ブロック分の作物です。ニンニクの種は農地に植えることができ、$(thing)ニンニク$()と$(thing)ニンニクの種$()を生産します。",
       "title": "ニンニク"
     },
     {
@@ -1339,7 +1339,7 @@
     {
       "type": "patchouli:text",
       "anchor": "green_bean",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 2 - 35 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 38 - 100 %$(br)$(bold)栄養素$(): 窒素$(br2)インゲンは2ブロックの高さのつる性の作物です。 インゲンの種は農地に植えることができ、棒がある場合は 2 ブロックの高さに成長し、$(thing)インゲン$() と $(thing)いんげんの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 2 - 35 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 38 - 100 %$(br)$(bold)栄養素$(): 窒素$(br2)インゲンは高さ2ブロック分のつる性の作物です。インゲンの種は農地に植えることができ、棒がある場合は2ブロックの高さに成長し、$(thing)インゲン$()と$(thing)インゲンの種$()を生産します。",
       "title": "インゲン"
     },
     {
@@ -1519,7 +1519,7 @@
     {
       "type": "patchouli:text",
       "anchor": "potato",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): -1 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 50 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ジャガイモは単一ブロック作物です。 ジャガイモの種は農地に植えることができ、$(thing)ジャガイモ$() と $(thing)ジャガイモの種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): -1 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 50 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ジャガイモは1ブロック分の作物です。ジャガイモの種は農地に植えることができ、$(thing)ジャガイモ$()と$(thing)ジャガイモの種$()を生産します。",
       "title": "ジャガイモ"
     },
     {
@@ -1650,8 +1650,8 @@
     {
       "type": "patchouli:text",
       "anchor": "pumpkin",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 0 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 30 - 80 %$(br)$(bold)栄養素$(): リン$(br2)ぺポカボチャは広がる作物です。 ぺポカボチャの種は農地に植えることができ、成熟するとその隣の地面に最大 2 個の $(thing)カボチャブロック$() を置きます。 カボチャブロックを収穫し、植物が再び成長すると、より多くのぺポカボチャを育てることができます。 ぺポカボチャは $(l:mechanics/lighting#jack_o_lanterns)ジャック・オ・ランタン$() に加工することができます。",
-      "title": "ぺポカボチャ"
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 0 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 30 - 80 %$(br)$(bold)栄養素$(): リン$(br2)カボチャは広がる作物です。カボチャの種は農地に植えることができ、成熟するとその隣の地面に最大で2個の$(thing)カボチャブロック$()を生産します。カボチャブロックを収穫し、植物が再び成長すると、より多くのカボチャが得られます。カボチャは$(l:mechanics/lighting#jack_o_lanterns)ジャック・オ・ランタン$()に加工できます。",
+      "title": "カボチャ"
     },
     {
       "type": "tfc:multimultiblock",
@@ -1822,7 +1822,7 @@
     {
       "type": "patchouli:text",
       "anchor": "melon",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 5 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 75 - 100 %$(br)$(bold)栄養素$(): リン$(br2)スイカは広がる作物です。 スイカの種は農地に植えることができ、熟すまでその隣の地面に最大 2 つの $(thing)スイカブロック$() を置きます。 スイカを収穫し、植物が再び成長すると、より多くのスイカが成長します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 5 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 75 - 100 %$(br)$(bold)栄養素$(): リン$(br2)スイカは広がる作物です。スイカの種は農地に植えることができ、成熟するとその隣の地面に最大で2個の$(thing)スイカブロック$()を生産します。スイカブロックを収穫し、植物が再び成長すると、より多くのスイカが得られます。",
       "title": "スイカ"
     },
     {
@@ -1994,8 +1994,8 @@
     {
       "type": "patchouli:text",
       "anchor": "red_bell_pepper",
-      "text": "$(bold)$(l:the_world/climate#temperature)Temperature$(): 16 - 30 °C$(br)$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 60 %$(br)$(bold)Nutrient$(): Potassium$(br2)Red Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
-      "title": "Red Bell Peppers"
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 6 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 60 %$(br)$(bold)栄養素$(): カリウム$(br2)赤ピーマンは摘み取ることができる作物です。成熟に近づくと、$(item)$(k:key.use)$()を使って収穫し、青ピーマンが得られます。$(item)$(k:key.use)$()を使用して収穫すると、植物を破壊することなく、将来的により多くのピーマンが得られます。",
+      "title": "赤ピーマン"
     },
     {
       "type": "tfc:multimultiblock",
@@ -2125,8 +2125,8 @@
     {
       "type": "patchouli:text",
       "anchor": "yellow_bell_pepper",
-      "text": "$(bold)$(l:the_world/climate#temperature)Temperature$(): 16 - 30 °C$(br)$(bold)$(l:mechanics/hydration)Hydration$(): 25 - 60 %$(br)$(bold)Nutrient$(): Potassium$(br2)Yellow Bell Peppers are a pickable crop. When they are near mature, they can be harvested with $(item)$(k:key.use)$() to obtain Green Bell Peppers. Harvesting with $(item)$(k:key.use)$() allows the plant to grow more peppers in the future rather than destroying the plant.",
-      "title": "Yellow Bell Peppers"
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 16 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 60 %$(br)$(bold)栄養素$(): カリウム$(br2)黄ピーマンは摘み取ることができる作物です。成熟に近づくと、$(item)$(k:key.use)$()を使って収穫し、青ピーマンが得られます。$(item)$(k:key.use)$()を使用して収穫すると、植物を破壊することなく、将来的により多くのピーマンを得られます。",
+      "title": "黄ピーマン"
     },
     {
       "type": "tfc:multimultiblock",
@@ -2256,7 +2256,7 @@
     {
       "type": "patchouli:text",
       "anchor": "onion",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 0 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 90 %$(br)$(bold)栄養素$(): 窒素$(br2)タマネギは単一ブロック作物です。 タマネギの種は農地に植えることができ、製品として $(thing)タマネギ$() と $(thing)タマネギの種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 0 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 90 %$(br)$(bold)栄養素$(): 窒素$(br2)タマネギは1ブロック分の作物です。タマネギの種は農地に植えることができ、$(thing)タマネギ$()と$(thing)タマネギの種$()を生産します。",
       "title": "タマネギ"
     },
     {
@@ -2387,7 +2387,7 @@
     {
       "type": "patchouli:text",
       "anchor": "soybean",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 8 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 40 - 100 %$(br)$(bold)栄養素$(): 窒素$(br2)大豆は単一ブロック作物です。 大豆の種は農地に植えることができ、製品として $(thing)大豆$() と $(thing)大豆の種$() が生産されます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 8 - 30 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 40 - 100 %$(br)$(bold)栄養素$(): 窒素$(br2)大豆は1ブロック分の作物です。大豆の種は農地に植えることができ、$(thing)大豆$()と$(thing)大豆の種$()を生産します。",
       "title": "大豆"
     },
     {
@@ -2518,8 +2518,8 @@
     {
       "type": "patchouli:text",
       "anchor": "squash",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 5 - 33 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 23 - 95 %$(br)$(bold)栄養素$(): カリウム$(br2)カボチャは単一ブロック作物です。 スカッシュの種は農地に植えることができ、$(thing)カボチャ$() と $(thing)カボチャの種$() を生産します。",
-      "title": "カボチャ"
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 5 - 33 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 23 - 95 %$(br)$(bold)栄養素$(): カリウム$(br2)スカッシュは1ブロック分の作物です。スカッシュの種は農地に植えることができ、$(thing)スカッシュ$()と$(thing)スカッシュの種$()を生産します。",
+      "title": "スカッシュ"
     },
     {
       "type": "tfc:multimultiblock",
@@ -2666,7 +2666,7 @@
     {
       "type": "patchouli:text",
       "anchor": "sugarcane",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 12 - 38 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 40 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)サトウキビは 2 ブロックの高さの作物です。 サトウキビの種は農地に植えることができ、2 ブロックの高さに成長し、$(thing)サトウキビ$() と $(thing)サトウキビの種$() を生産します。 サトウキビを使って $(thing)砂糖$() を作ることができます。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 12 - 38 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 40 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)サトウキビは高さ2ブロック分の作物です。サトウキビの種は農地に植えることができ、2ブロックの高さに成長し、$(thing)サトウキビ$()と$(thing)サトウキビの種$()を生産します。サトウキビを使って$(thing)砂糖$()を作ることができます。",
       "title": "サトウキビ"
     },
     {
@@ -2846,7 +2846,7 @@
     {
       "type": "patchouli:text",
       "anchor": "tomatoes",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 0 - 36 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 30 - 95 %$(br)$(bold)栄養素$(): カリウム$(br2)トマトは2ブロックの高さのつる性の作物です。 トマトの種は農地に植えることができ、棒がある場合は 2 ブロックの高さに成長し、$(thing)トマト$() と $(thing)トマトの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 0 - 36 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 30 - 95 %$(br)$(bold)栄養素$(): カリウム$(br2)トマトは高さ2ブロック分のつる性の作物です。トマトの種は農地に植えることができ、棒がある場合は2ブロックの高さに成長し、$(thing)トマト$()と$(thing)トマトの種$()を生産します。",
       "title": "トマト"
     },
     {
@@ -3026,7 +3026,7 @@
     {
       "type": "patchouli:text",
       "anchor": "jute",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 5 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ジュートは2ブロックの高さの作物です。 ジュートの種は農地に植えることができ、2 ブロックの高さに成長し、$(thing)ジュート$() と $(thing)ジュートの種$() を生産します。",
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 5 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 25 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)ジュートは高さ2ブロック分の作物です。ジュートの種は農地に植えることができ、2ブロックの高さに成長し、$(thing)ジュート$()と$(thing)ジュートの種$()を生産します。",
       "title": "ジュート"
     },
     {
@@ -3164,8 +3164,8 @@
     {
       "type": "patchouli:text",
       "anchor": "papyrus",
-      "text": "$(bold)$(l:the_world/climate#temperature)温度$(): 19 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 70 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)カミガヤツリは2ブロックの高さの作物です。 カミガヤツリの種は農地に植えることができ、2 ブロックの高さに成長し、$(l:mechanics/papermaking)カミガヤツリ$() と $(thing)カミガヤツリの種$() を生産します。",
-      "title": "カミガヤツリ"
+      "text": "$(bold)$(l:the_world/climate#temperature)気温$(): 19 - 37 °C$(br)$(bold)$(l:mechanics/hydration)水分量$(): 70 - 100 %$(br)$(bold)栄養素$(): カリウム$(br2)パピルスは2ブロックの高さの作物です。パピルスの種は農地に植えることができ、2ブロックの高さに成長し、$(l:mechanics/papermaking)パピルス$()と$(thing)パピルスの種$()を生産します。",
+      "title": "パピルス"
     },
     {
       "type": "tfc:multimultiblock",

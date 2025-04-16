@@ -1,12 +1,12 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "name": "ランプ",
+  "name": "ランタン",
   "category": "tfc:mechanics",
   "icon": "tfc:metal/lamp/bismuth_bronze",
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Lamps are a long term source of light. They burn liquid fuel. Lamps retain their fuel content when broken. Using a bucket, $(item)$(k:key.use)$() on a lamp to add fuel to it. It can then be lit with a $(thing)firestarter$() or anything capable of lighting fires. $(thing)Olive Oil$() and $(thing)Tallow$() are lamp fuels. Shooting a lit lamp with an arrow can cause a fire."
+      "text": "ランタンは長期的な光源です。液体燃料を燃焼します。ランタンは壊れても燃料が残ります。バケツを使ってランタンに燃料を追加するには、$(item)$(k:key.use)$()を使用してください。次に、$(thing)火おこし器$()や火をつけることができるものを使って点火します。$(thing)オリーブオイル$()や$(thing)獣脂$()はランタンの燃料です。点灯したランタンに矢を射ると火災が発生することがあります。"
     },
     {
       "type": "patchouli:multiblock",
@@ -27,20 +27,20 @@
           "Y": "tfc:metal/lamp/copper[hanging=true,lit=true]"
         }
       },
-      "name": "ランプ",
-      "text": "A lit lamp hanging from a chain.",
+      "name": "ランタン",
+      "text": "チェーンに吊るされた点灯したランタン。",
       "enable_visualize": false
     },
     {
       "type": "patchouli:crafting",
       "recipe": "tfc:crafting/metal/lamp/bronze",
-      "text": "Lamps are smithed in the $(l:mechanics/anvils)Anvil$() and crafted with $(l:mechanics/glassworking_applications#lamp_glass)Lamp Glass$() to be completed."
+      "text": "ランタンは$(l:mechanics/anvils)金床$()で鍛造され、$(l:mechanics/glassworking_applications#lamp_glass)ランタンガラス$()で完成されます。"
     },
     {
       "type": "tfc:quern_recipe",
       "anchor": "olives",
       "recipe": "tfc:quern/olive",
-      "text": "ランプの燃料の 1 つは $(thing)オリーブオイル$() です。 製造の最初のステップは、オリーブペーストを作ることです。"
+      "text": "ランタンの燃料の1つは$(thing)オリーブオイル$()です。製造の最初のステップは、オリーブペーストを作ることです。"
     },
     {
       "type": "patchouli:crafting",
@@ -49,12 +49,12 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(thing)オリーブペースト$() と $(thing)水$() を $(l:mechanics/pot)ポット$() で煮て、$(thing)オリーブオイル水$() を作ります。 それを $(thing)ジュートの網$() と共に $(l:mechanics/barrels)樽$() に密閉し、$(thing)オリーブオイル$() を生成します。 オリーブオイルは、液体単位ごとにゲーム内で 8 時間燃焼します。"
+      "text": "$(thing)オリーブペースト$()と$(thing)水$()を$(l:mechanics/pot)鍋$()で煮て、$(thing)オリーブオイル水$()を作ります。それを$(thing)ジュートの網$()と共に$(l:mechanics/barrels)樽$()に密閉し、$(thing)オリーブオイル$()を生成します。オリーブオイルは、液体単位ごとにゲーム内で8時間燃焼します。"
     },
     {
       "type": "patchouli:text",
       "anchor": "tallow",
-      "text": "もう 1 つのランプ燃料は $(thing)獣脂$() です。 作り方は、$(l:mechanics/pot)ポット$() で水と 5 個の $(thing)脂肪$() を調理することです。 獣脂の燃焼時間は、ユニットごとにゲーム内で 2 時間です。 $(l:mechanics/lighting#candles)ろうそく$() を作成するために使用できます。"
+      "text": "もう1つのランタンの燃料は$(thing)獣脂$()です。作り方は、$(l:mechanics/pot)鍋$()で水と5個の$(thing)獣脂$()を調理することです。獣脂の燃焼時間は、ユニットごとにゲーム内で2時間です。$(l:mechanics/lighting#candles)ろうそく$()を作成するためにも使用できます。"
     },
     {
       "type": "patchouli:multiblock",
@@ -71,14 +71,14 @@
           "X": "tfc:metal/lamp/blue_steel[lit=true]"
         }
       },
-      "name": "溶岩ランプ",
-      "text": "溶岩は永遠に燃え続けますが、$(l:mechanics/steel#blue_steel)青鋼$() ランプの中にのみ保持できます。",
+      "name": "溶岩ランタン",
+      "text": "溶岩は永遠に燃え続けますが、$(l:mechanics/steel#blue_steel)青鋼$()ランタンの中にのみ保持できます。",
       "enable_visualize": false
     },
     {
       "type": "tfc:anvil_recipe",
       "recipe": "tfc:anvil/black_steel_chain",
-      "text": "$(thing)鎖$() はランプを吊るすのに最適な方法で、$(l:mechanics/anvils)金床$() で鍛造できます。"
+      "text": "$(thing)鎖$()はランタンを吊るすのに最適な方法で、$(l:mechanics/anvils)金床$()で鍛造できます。"
     }
   ],
   "read_by_default": true,
