@@ -178,7 +178,7 @@ public class TFCFoodData extends net.minecraft.world.food.FoodData
             if (difficulty == Difficulty.PEACEFUL)
             {
                 // Copied from vanilla's food stats, so we consume food in peaceful mode (would normally be part of the super.onUpdate call
-                if (delegate.getExhaustionLevel() > 4.0F)
+                if (delegate.getExhaustionLevel() > 4.0F && getSaturationLevel() <= 0)
                 {
                     setFoodLevel(Math.max(getFoodLevel() - 1, 0));
                 }

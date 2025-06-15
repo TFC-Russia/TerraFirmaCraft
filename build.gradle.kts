@@ -203,26 +203,26 @@ tasks {
         }
 
         if (minifyResources) {
-            doLast {
-                val jsonMinifyStart: Long = System.currentTimeMillis()
-                var jsonMinified: Long = 0
-                var jsonBytesBefore: Long = 0
-                var jsonBytesAfter: Long = 0
-
-                fileTree(mapOf("dir" to outputs.files.asPath, "include" to "**/*.json")).forEach {
-                    jsonMinified++
-                    jsonBytesBefore += it.length()
-                    try {
-                        it.writeText(JsonOutput.toJson(JsonSlurper().parse(it)).replace("\"__comment__\":\"This file was automatically created by mcresources\",", ""))
-                    } catch (e: Exception) {
-                        println("JSON Error in ${it.path}")
-                        throw e
-                    }
-
-                    jsonBytesAfter += it.length()
-                }
-                println("Minified $jsonMinified json files. Reduced ${jsonBytesBefore / 1024} kB to ${(jsonBytesAfter / 1024)} kB. Took ${System.currentTimeMillis() - jsonMinifyStart} ms")
-            }
+//            doLast {
+//                val jsonMinifyStart: Long = System.currentTimeMillis()
+//                var jsonMinified: Long = 0
+//                var jsonBytesBefore: Long = 0
+//                var jsonBytesAfter: Long = 0
+//
+//                fileTree(mapOf("dir" to outputs.files.asPath, "include" to "**/*.json")).forEach {
+//                    jsonMinified++
+//                    jsonBytesBefore += it.length()
+//                    try {
+//                        it.writeText(JsonOutput.toJson(JsonSlurper().parse(it)).replace("\"__comment__\":\"This file was automatically created by mcresources\",", ""))
+//                    } catch (e: Exception) {
+//                        println("JSON Error in ${it.path}")
+//                        throw e
+//                    }
+//
+//                    jsonBytesAfter += it.length()
+//                }
+//                println("Minified $jsonMinified json files. Reduced ${jsonBytesBefore / 1024} kB to ${(jsonBytesAfter / 1024)} kB. Took ${System.currentTimeMillis() - jsonMinifyStart} ms")
+//            }
         }
     }
 

@@ -2,7 +2,7 @@
   "The World": "世界",
   "All about the natural world around you.": "あなたの周りに広がる世界についてのすべてを知ることができます。",
   "Geology": "地質",
-  "The world of TerraFirmaCraft is divided into large continents - landmasses many kilometers wide and seperated by oceans. In these, you may find mountain ranges, rivers, and many other environments.": "TerraFirmaCraftの世界は、大陸と呼ばれる数キロメートルに渡る広大な陸地が海によって分けられています。その中には山脈、川、そして多くの異なる環境が見られます。",
+  "The world of TerraFirmaCraft is divided into large continents - landmasses many kilometers wide and separated by oceans. In these, you may find mountain ranges, rivers, and many other environments.": "TerraFirmaCraftの世界は、大陸と呼ばれる数キロメートルに渡る広大な陸地が海によって分けられています。その中には山脈、川、そして多くの異なる環境が見られます。",
   "A typical TFC world viewed at a large scale.": "大規模な視点で見た典型的なTFCの世界。",
   "The world is also divided up into different types of $(thing)Rock$(). Rock regions can be over a kilometer across, and there will usually be two or three different rock layers under your feet at all times. As different ores are found in different rock types, locating specific rock types can be very important for finding resources such as $(l:the_world/ores_and_minerals)Ores$(), which will often only appear in certain rock types.": "世界はまた、さまざまな種類の$(thing)岩$()に分かれています。岩の地域は1キロメートル以上にわたることがあり、常に2層または3層の異なる岩層が足元に広がっています。$(l:the_world/ores_and_minerals)鉱石$()のような資源は特定の岩の種類でしか出現しないことがよくあるため、特定の岩の種類を見つけることは非常に重要です。",
   "Rock Layers": "岩層",

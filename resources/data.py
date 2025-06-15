@@ -185,7 +185,7 @@ def generate(rm: ResourceManager):
     item_size(rm, 'minecarts', '#tfc:minecarts', Size.very_large, Weight.heavy)
     item_size(rm, 'boats', '#minecraft:boats', Size.very_large, Weight.heavy)
     item_size(rm, 'looms', '#tfc:looms', Size.large, Weight.very_heavy)
-    item_size(rm, 'ingots', '#forge:ingots', Size.large, Weight.medium)
+    item_size(rm, 'ingots', {'type': 'forge:difference', 'base': {'tag': 'forge:ingots'}, 'subtracted': {'item': 'minecraft:brick'}}, Size.large, Weight.medium)
     item_size(rm, 'double_ingots', '#forge:double_ingots', Size.large, Weight.heavy)
     item_size(rm, 'sheets', '#forge:sheets', Size.large, Weight.medium)
     item_size(rm, 'double_sheets', '#forge:double_sheets', Size.large, Weight.heavy)

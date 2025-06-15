@@ -346,6 +346,7 @@ def generate(rm: ResourceManager):
     rm.crafting_shaped('crafting/vanilla/scaffolding', ['XYX', 'X X', 'X X'], {'X': 'minecraft:bamboo', 'Y': '#forge:string'}, (6, 'minecraft:scaffolding')).with_advancement('minecraft:bamboo')
     rm.crafting_shaped('crafting/vanilla/bow', [' YX', 'Y X', ' YX'], {'Y': '#forge:rods/wooden', 'X': '#forge:string'}, 'minecraft:bow').with_advancement('#forge:string')
     rm.crafting_shaped('crafting/vanilla/lightning_rod', ['X', 'X', 'X'], {'X': '#forge:rods/copper'}, 'minecraft:lightning_rod').with_advancement('#forge:rods/copper')
+    rm.crafting_shaped('crafting/vanilla/brick_stairs', ['X  ', 'XX ', 'XXX'], {'X': 'minecraft:bricks'}, '8 minecraft:brick_stairs').with_advancement('minecraft:bricks')
 
     # Redstone lamp intentionally left out as it is a trivial infinite light source
     rm.crafting_shaped('crafting/vanilla/redstone/hopper', ['X X', ' Y '], {'X': '#forge:sheets/wrought_iron', 'Y': '#forge:chests/wooden'}, 'minecraft:hopper').with_advancement('#forge:sheets/wrought_iron')

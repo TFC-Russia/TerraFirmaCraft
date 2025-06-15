@@ -501,7 +501,7 @@ public class ServerConfig
         builder.swap("crops");
 
         cropGrowthModifier = builder.comment("Modifier applied to the growth time of every crop. The modifier multiplies the ticks it takes to grow, so larger values cause longer growth times. For example, a value of 2 doubles the growth time.").define("cropGrowthModifier", 1, 0.001, 1000);
-        cropExpiryModifier = builder.comment("Modifier applied to the expiry time of every crop. The modifier multiplies the ticks it takes to grow, so larger values cause longer growth times. For example, a value of 2 doubles the growth time.").define("cropExpiryModifier", 1, 0.001, 1000);
+        cropExpiryModifier = builder.comment("Modifier applied to the expiry time of every crop. The modifier multiplies the ticks it takes to grow, so larger values cause longer expiry times. For example, a value of 2 doubles the expiry time.").define("cropExpiryModifier", 1, 0.001, 1000);
 
         builder.swap("dispenser");
 
