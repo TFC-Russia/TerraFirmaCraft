@@ -156,20 +156,6 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
         final ItemStack stack = inventory.getStackInSlot(SLOT_INPUT_MAIN);
         if (!stack.isEmpty())
         {
-            // If multiple items are in the main slot, all but 1 are moved to the secondary slot, or put into the excess output list if the secondary item slot is full
-            if (stack.getCount() != 1)
-            {
-                final ItemStack overflow = stack.split(stack.getCount() - 1);
-                if (inventory.getStackInSlot(SLOT_INPUT_SECOND).isEmpty())
-                {
-                    inventory.setStackInSlot((SLOT_INPUT_SECOND), overflow);
-                }
-                else
-                {
-                    inventory.excess.add(overflow);
-                }
-            }
-
             final Forging forge = ForgingCapability.get(stack);
             if (forge != null)
             {
@@ -184,6 +170,19 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
                         recipe = all.iterator().next();
                         if (!level.isClientSide)
                         {
+                            // If multiple items are in the main slot, all but 1 are moved to the secondary slot, or put into the excess output list if the secondary item slot is full
+                            if (stack.getCount() != 1)
+                            {
+                                final ItemStack overflow = stack.split(stack.getCount() - 1);
+                                if (inventory.getStackInSlot(SLOT_INPUT_SECOND).isEmpty())
+                                {
+                                    inventory.setStackInSlot((SLOT_INPUT_SECOND), overflow);
+                                }
+                                else
+                                {
+                                    inventory.excess.add(overflow);
+                                }
+                            }
                             forge.setRecipe(recipe, inventory);
                         }
                     }
@@ -215,23 +214,23 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
         final ItemStack stack = inventory.getStackInSlot(SLOT_INPUT_MAIN);
         if (!stack.isEmpty())
         {
-            // If multiple items are in the main slot, all but 1 are moved to the secondary slot, or put into the excess output list if the secondary item slot is full
-            if (stack.getCount() != 1)
-            {
-                final ItemStack overflow = stack.split(stack.getCount() - 1);
-                if (inventory.getStackInSlot(SLOT_INPUT_SECOND).isEmpty())
-                {
-                    inventory.setStackInSlot((SLOT_INPUT_SECOND), overflow);
-                }
-                else
-                {
-                    inventory.excess.add(overflow);
-                }
-            }
-
             final Forging forge = ForgingCapability.get(stack);
             if (forge != null)
             {
+                // If multiple items are in the main slot, all but 1 are moved to the secondary slot, or put into the excess output list if the secondary item slot is full
+                if (stack.getCount() != 1)
+                {
+                    final ItemStack overflow = stack.split(stack.getCount() - 1);
+                    if (inventory.getStackInSlot(SLOT_INPUT_SECOND).isEmpty())
+                    {
+                        inventory.setStackInSlot((SLOT_INPUT_SECOND), overflow);
+                    }
+                    else
+                    {
+                        inventory.excess.add(overflow);
+                    }
+                }
+
                 forge.setRecipe(recipe, inventory);
             }
         }
