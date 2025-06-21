@@ -139,7 +139,7 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
         assert level != null;
 
         final ItemStack stack = inventory.getStackInSlot(SLOT_INPUT_MAIN);
-        if (!stack.isEmpty())
+        if (!stack.isEmpty() && stack.getCount() == 1)
         {
             final Forging forge = ForgingCapability.get(stack);
             if (forge != null)
@@ -180,7 +180,7 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
         assert level != null;
 
         final ItemStack stack = inventory.getStackInSlot(SLOT_INPUT_MAIN);
-        if (!stack.isEmpty())
+        if (!stack.isEmpty() && stack.getCount() == 1)
         {
             final Forging forge = ForgingCapability.get(stack);
             if (forge != null)
