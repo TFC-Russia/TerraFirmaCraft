@@ -479,9 +479,20 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
             final ItemStack result = recipe.assemble(inventory, level.registryAccess());
             final @Nullable IHeat resultHeat = HeatCapability.get(result);
 
-            inventory.setStackInSlot(SLOT_INPUT_MAIN, result);
-            inventory.setStackInSlot(SLOT_INPUT_SECOND, ItemStack.EMPTY);
+            inventory.getStackInSlot(SLOT_INPUT_MAIN).shrink(1);
+            inventory.getStackInSlot(SLOT_INPUT_SECOND).shrink(1);
             inventory.getStackInSlot(SLOT_CATALYST).shrink(1);
+
+            // If the main item slot is free, we move the result into it, otherwise we simply add it to the excess item list
+            // We don't just put the result into the main item slot due to recipes which can output multiple items, as these could lead to unintended item deletion
+            if (inventory.getStackInSlot(SLOT_INPUT_MAIN).isEmpty())
+            {
+                inventory.setStackInSlot(SLOT_INPUT_MAIN, result);
+            }
+            else
+            {
+                inventory.excess.add(result);
+            }
 
             // If there are excess output items, we move them into the newly freed up item slot
             if (!inventory.excess.isEmpty())
