@@ -25,7 +25,6 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -289,10 +288,7 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
                             TFCAdvancements.PERFECTLY_FORGED.trigger(player);
                         }
                     }
-
-                    ItemStack outputSingleStack = outputStack.split(1);
-                    inventory.setStackInSlot(SLOT_INPUT_MAIN, outputSingleStack);
-                    ItemHandlerHelper.giveItemToPlayer(player, outputStack);
+                    inventory.setStackInSlot(SLOT_INPUT_MAIN, outputStack);
                 }
 
                 markForSync();
@@ -437,18 +433,16 @@ public class AnvilBlockEntity extends InventoryBlockEntity<AnvilBlockEntity.Anvi
             final ItemStack result = recipe.assemble(inventory, level.registryAccess());
             final @Nullable IHeat resultHeat = HeatCapability.get(result);
 
+            inventory.setStackInSlot(SLOT_INPUT_MAIN, result);
+            inventory.setStackInSlot(SLOT_INPUT_SECOND, ItemStack.EMPTY);
+            inventory.getStackInSlot(SLOT_CATALYST).shrink(1);
+
             // Always copy heat from inputs since we have two
             if (resultHeat != null)
             {
                 resultHeat.setTemperatureIfWarmer(leftHeat);
                 resultHeat.setTemperatureIfWarmer(rightHeat);
             }
-
-            ItemStack singleResult = result.split(1);
-            inventory.setStackInSlot(SLOT_INPUT_MAIN, singleResult);
-            ItemHandlerHelper.giveItemToPlayer(player, result);
-            inventory.setStackInSlot(SLOT_INPUT_SECOND, ItemStack.EMPTY);
-            inventory.getStackInSlot(SLOT_CATALYST).shrink(1);
 
             markForSync();
             return InteractionResult.SUCCESS;
