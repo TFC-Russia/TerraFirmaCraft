@@ -628,7 +628,7 @@ public class ServerConfig
         
         builder.swap("fluids");
 
-        enableBucketsPlacingSources = builder.comment("If true, TFC buckets that naturally place sources (colored steel) will place sources. If false, this behavior is disabled.").define("enableBucketsPlacingSources", true);
+        enableBucketsPlacingSources = builder.comment("If true, TFC buckets that naturally place sources (colored steel) will place sources. If false, this behavior is disabled. By default, colored steel buckets do not place sources.").define("enableBucketsPlacingSources1", false);
 
         builder.swap("vanillaChanges");
 
