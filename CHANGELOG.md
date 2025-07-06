@@ -1,8 +1,6 @@
 ### Changes
-- Fix stair math of brick stairs (#2930)
-- Fix stacking size of bricks (#2929)
-- Fix hunger being consumed in peaceful when the player is saturated (#2923)
-- Fix geodes placing unsupported rock (#2913)
-- Fix many localization and naming issues (en_us, ru_ru, ja_jp)
-- Fix an issue with javelins (#2898)
-- Fix a crash when cutting trees down above the Void (#2900)
+- Added support for anvil recipes with stacked output
+- Disabled vanilla's powered rail recipe (#2954)
+- Show the min. y-level of graphite in the guidebook (#2950)
+- Fix a fluid exploit (#2959)
+- Fix an issue with the colored steel bucket config (#2920)
