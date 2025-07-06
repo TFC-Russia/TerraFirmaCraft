@@ -624,7 +624,7 @@ public final class FluidHelpers
             // canPassThroughWall detects if a fluid state has a barrier - e.g. via a stair edge - that would prevent it from connecting to the current block.
             if (offsetFluid.getType() instanceof FlowingFluid && ((FlowingFluidAccessor) self).invoke$canPassThroughWall(direction, level, pos, blockStateIn, offsetPos, offsetState))
             {
-                if (offsetFluid.isSource() && ForgeEventFactory.canCreateFluidSource(level, offsetPos, offsetState, canConvertToSource))
+                if (offsetFluid.isSource() && ForgeEventFactory.canCreateFluidSource(level, offsetPos, offsetState, offsetFluid.canConvertToSource(level, offsetPos)))
                 {
                     adjacentSourceBlocks++;
                     adjacentSourceBlocksByFluid.mergeInt((FlowingFluid) offsetFluid.getType(), 1, Integer::sum);
