@@ -121,7 +121,7 @@ public class TFCEntities
     // Water Creatures
 
     public static final RegistryObject<EntityType<TFCDolphin>> DOLPHIN = register("dolphin", EntityType.Builder.of(TFCDolphin::new, MobCategory.WATER_CREATURE).sized(0.9F, 0.6F));
-    public static final RegistryObject<EntityType<TFCDolphin>> ORCA = register("orca", EntityType.Builder.of(TFCDolphin::new, MobCategory.WATER_CREATURE).sized(1.1F, 1.0F));
+    public static final RegistryObject<EntityType<TFCOrca>> ORCA = register("orca", EntityType.Builder.of(TFCOrca::new, MobCategory.WATER_CREATURE).sized(1.1F, 1.0F));
     public static final RegistryObject<EntityType<Manatee>> MANATEE = register("manatee", EntityType.Builder.of(Manatee::new, MobCategory.WATER_CREATURE).sized(1.5F, 1.2F));
     public static final RegistryObject<EntityType<TFCSquid>> SQUID = register("squid", EntityType.Builder.of(TFCSquid::new, MobCategory.WATER_CREATURE).sized(0.8F, 0.8F).clientTrackingRange(8));
     public static final RegistryObject<EntityType<Octopoteuthis>> OCTOPOTEUTHIS = register("octopoteuthis", EntityType.Builder.of(Octopoteuthis::new, MobCategory.UNDERGROUND_WATER_CREATURE).sized(0.8F, 0.8F).clientTrackingRange(8));
@@ -207,7 +207,7 @@ public class TFCEntities
         event.put(ISOPOD.get(), AbstractFish.createAttributes().build());
         event.put(HORSESHOE_CRAB.get(), AbstractFish.createAttributes().build());
         event.put(DOLPHIN.get(), Dolphin.createAttributes().build());
-        event.put(ORCA.get(), Dolphin.createAttributes().build());
+        event.put(ORCA.get(), TFCOrca.createAttributes().build());
         event.put(MANATEE.get(), Manatee.createAttributes().build());
         event.put(TURTLE.get(), AmphibiousAnimal.createAttributes().build());
         event.put(PENGUIN.get(), AmphibiousAnimal.createAttributes().build());

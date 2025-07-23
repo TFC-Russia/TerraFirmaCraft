@@ -91,7 +91,7 @@
     "water_creature": [
       {
         "type": "tfc:orca",
-        "weight": 1,
+        "weight": 3,
         "minCount": 1,
         "maxCount": 3
       },
