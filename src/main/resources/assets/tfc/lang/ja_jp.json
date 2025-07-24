@@ -226,7 +226,7 @@
   "tfc.tooltip.anvil_plan": "レシピ",
   "tfc.tooltip.anvil_tier_required": "%sの金床が必要",
   "tfc.tooltip.calendar_days_years": "%d日, %04d年",
-  "tfc.tooltip.calendar_hour_minute_month_day_year": "%s %s %d, %04d",
+  "tfc.tooltip.calendar_hour_minute_month_day_year": "%s %s %d日, %04d年",
   "tfc.tooltip.calendar_season": "季節 : %s",
   "tfc.tooltip.calendar_day": "曜日 : %s",
   "tfc.tooltip.calendar_birthday": "%s の誕生日です！",
