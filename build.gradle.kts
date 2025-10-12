@@ -100,6 +100,9 @@ dependencies {
     runtimeOnly(fg.deobf("curse.maven:jade-324717:${jadeVersion}"))
     // runtimeOnly(fg.deobf("curse.maven:top-245211:${topVersion}"))
 
+    // ForgeTownyBridge
+    compileOnly(":forge_towny_bridge:1.0.0")
+
     if (System.getProperty("idea.sync.active") != "true") {
         annotationProcessor("org.spongepowered:mixin:${mixinVersion}:processor")
     }

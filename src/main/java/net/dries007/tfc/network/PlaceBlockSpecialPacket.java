@@ -23,6 +23,10 @@ import net.dries007.tfc.common.blocks.devices.PlacedItemBlock;
 import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
 
+import com.koenigstag.forge_towny_bridge.ForgeTownyBridge;
+import com.koenigstag.forge_towny_bridge.towny.TownyAPI;
+import com.koenigstag.forge_towny_bridge.towny.object.TownyPermission.ActionType;
+
 public class PlaceBlockSpecialPacket
 {
     void handle(@Nullable ServerPlayer player)
@@ -48,6 +52,9 @@ public class PlaceBlockSpecialPacket
                     }
                     else if (!stack.isEmpty() && level.isEmptyBlock(above))
                     {
+                        if (!hasTownyPermission(player, level, above))
+                            return;
+
                         double y = blockResult.getLocation().y - pos.getY();
                         if (y == 0 || y == 1) // if we are on the top or bottom face
                         {
@@ -62,5 +69,18 @@ public class PlaceBlockSpecialPacket
                 }
             }
         }
+    }
+    
+    private boolean hasTownyPermission(ServerPlayer player, Level level, BlockPos pos)
+    {
+        try {
+            final TownyAPI townyApi = ForgeTownyBridge.getInstance().getAPI();
+
+            if (townyApi != null && !townyApi.hasPermission(player, level, pos, ActionType.BUILD))
+                return false;
+        } catch (Exception e) {
+            // ForgeTownyBridge not available, allow action
+        }
+        return true;
     }
 }
